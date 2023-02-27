@@ -15,6 +15,7 @@ class RickMortyViewModel @Inject constructor(
     private val apiService: ApiService
 ) : ViewModel() {
 
+    //repository
     val listData = Pager(PagingConfig(pageSize = 1)){
         RickMortyPagingSource(apiService)
     }.flow.cachedIn(viewModelScope)
